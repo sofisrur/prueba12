@@ -1,0 +1,61 @@
+
+<section class="src-componentes-formulario">
+  <div class="jumbotron">
+    <h2>Componente Formulario</h2>
+    <hr>
+    <hr>
+    <br>
+<form @submit.prevent="enviar()"><!-- el prevent es para que no se me reincie el form cuando lo envio -->
+<div class="form-group">
+  <label for="nombre">Nombre</label>
+  <input 
+  id="nombre" 
+  class="form-control" 
+  type="text"
+  v-model.trim="formData.nombre"
+  @input="formDirty.nombre=true"
+  ><!-- el trim es para que me deje mandar el form aunque ingrese algo con espacios -->
+ 
+  <div v-if="(!formData.nombre || formData.nombre.length < 3) && formDirty.nombre.dirty" class="alert alert-danger mt-1">
+    <div v-if="!formData.nombre">Campo requerido</div>
+    <div v-else-if="formData.nombre.length < 3">Campo requerido al menos tres caracteres</div>
+  </div>
+</div>
+<div class="form-group">
+  <label for="apellido">Apellido</label>
+  <input 
+  id="apellido" 
+  class="form-control" 
+  type="text"
+  v-model.trim="formData.apellido">
+</div>
+<div class="form-group">
+  <label for="edad">Edad</label>
+  <input 
+  id="edad" 
+  class="form-control" 
+  type="number"
+  v-model.number="formData.edad">
+</div>
+<div class="form-group">
+  <label for="mail">Mail</label>
+  <input 
+  id="mail" 
+  class="form-control" 
+  type="email"
+  v-model="formData.mail">
+</div>
+
+<button class="btn btn-success my-3" :disabled="!formData.nombre || formData.nombre.length < 3">Enviar</button>
+
+</form>
+<hr>
+<p><u>FormData</u></p>
+<pre>{{formData}}</pre><!-- el pre es para preservar el formato json -->
+<hr>
+<p><u>FormDirty</u></p>
+<pre>{{formDirty}}</pre>
+
+    </div>
+</section>
+

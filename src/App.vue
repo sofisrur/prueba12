@@ -1,28 +1,57 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container-fluid mt-3">
+    <div class="jumbotron">
+      <h1>Bienvenidos a VueJS CLI </h1>
+      <hr>
+      <Navbar/>
+      <router-view></router-view>
+      <!-- <Binding/>
+      <Estructura/>
+      <Atributos/>
+      <Contadores/>
+      <FormularioAv/>
+      <Formulario/>
+    -->
+
+
+   <!--    <div class="row">
+        <div class="col-4"><Binding/></div>
+        <div class="col-4"><Estructura/></div>
+        <div class="col-4"><Atributos/></div>
+      </div> -->
+      
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+/* import Binding from './componentes/Binding.vue'
+import Estructura from './componentes/Estructura.vue'
+import Atributos from './componentes/Atributos.vue'
+import Contadores from './componentes/Contadores.vue'
+import FormularioAv from './componentes/FormularioAv.vue'
+import Formulario from './componentes/Formulario/IndexFormulario.vue' */
+import Navbar from './componentes/Navbar.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+     /* Binding,
+    Estructura,
+    Atributos,
+    Contadores,
+    FormularioAv,
+    Formulario, */
+    Navbar
+   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+h1{
+  color:blue
 }
+
+
+
 </style>
